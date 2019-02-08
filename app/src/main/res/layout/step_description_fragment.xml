@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/step_description_name"
+    android:textColor="@color/colorAccent"
+    android:text="@string/description_name"
+    android:textSize="25sp"
+    />
+
+    <ScrollView android:id="@+id/step_description_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step_description_name"
+        android:layout_margin="20dp"
+
+    >
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/step_description"
+    android:textColor="@color/colorDark"
+    tools:text="myDescription"
+    android:textSize="25sp"
+
+    />
+</ScrollView>
+</RelativeLayout>
