@@ -13,10 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".StepActivity"
+        <receiver android:name=".IngredientWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/ingredient_widget_provider_info" />
+        </receiver>
+
+        <activity
+            android:name=".StepActivity"
             android:configChanges="screenLayout|screenSize|orientation"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity android:name=".RecipeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

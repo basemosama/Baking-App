@@ -3,4 +3,13 @@
     <string name="title_activity_recipe">RecipeActivity</string>
     <string name="ingredients">Ingredients</string>
     <string name="description_name">Description</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="default_recipe_image">Default Recipe Image</string>
+    <string name="expand_the_ingredients">expand the Ingredients</string>
+    <string name="recipe_load_error_message">Sorry ,There was an error while loading Recipes</string>
+    <string name="no_video_available_message">Sorry , There is no video available</string>
+    <string name="playing_video_error_messge">Sorry , There is an error when trying to play the video</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
 </resources>

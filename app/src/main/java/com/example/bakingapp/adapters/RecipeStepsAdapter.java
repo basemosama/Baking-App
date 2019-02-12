@@ -3,7 +3,6 @@ package com.example.bakingapp.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +14,9 @@ import com.example.bakingapp.objects.RecipeSteps;
 import java.util.List;
 
 public class RecipeStepsAdapter extends RecyclerView.Adapter<RecipeStepsAdapter.RecipeStepsViewHolder> {
-    Context context;
-    List<RecipeSteps> recipeSteps;
-    OnStepClickListener onStepClickListener;
+    private Context context;
+    private List<RecipeSteps> recipeSteps;
+    private OnStepClickListener onStepClickListener;
 
     public interface OnStepClickListener{
         void onItemClickListener(int position);
@@ -34,8 +33,7 @@ public class RecipeStepsAdapter extends RecyclerView.Adapter<RecipeStepsAdapter.
     public RecipeStepsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
      View view=LayoutInflater.from(context)
              .inflate(R.layout.recipe_part,viewGroup,false);
-        RecipeStepsViewHolder recipeStepsViewHolder =new RecipeStepsViewHolder(view);
-        return recipeStepsViewHolder;
+        return new RecipeStepsViewHolder(view);
     }
 
     @Override
@@ -54,16 +52,15 @@ public class RecipeStepsAdapter extends RecyclerView.Adapter<RecipeStepsAdapter.
     class RecipeStepsViewHolder extends RecyclerView.ViewHolder implements RecyclerView.OnClickListener{
 
         TextView stepText;
-        public RecipeStepsViewHolder(@NonNull View itemView) {
+        private RecipeStepsViewHolder(@NonNull View itemView) {
             super(itemView);
             stepText=itemView.findViewById(R.id.step_text);
             itemView.setOnClickListener(this);
         }
 
-        public void bind(int position){
-            String stepDiscription=recipeSteps.get(position).getShortDescription();
-            stepText.setText(stepDiscription);
-            Log.i("myTag5",stepDiscription);
+        private void bind(int position){
+            String stepDescription=recipeSteps.get(position).getShortDescription();
+            stepText.setText(stepDescription);
 
         }
 

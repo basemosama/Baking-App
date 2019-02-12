@@ -21,8 +21,8 @@
         android:id="@+id/recipe_image"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:contentDescription="Recipe image"
-        android:src="@drawable/food_error"
+        android:contentDescription="@string/default_recipe_image"
+        android:src="@drawable/food_image"
 
         />
 

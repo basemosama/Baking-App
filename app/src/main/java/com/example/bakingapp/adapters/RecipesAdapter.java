@@ -21,7 +21,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipesV
     private RecipeClickListener recipeClickListener;
 
     public interface RecipeClickListener{
-        void onRecipeClickListener(int positiom);
+        void onRecipeClickListener(int position);
     }
 
 
@@ -37,8 +37,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipesV
     public RecipesViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater=LayoutInflater.from(context);
         View view=inflater.inflate(R.layout.recipe_item,viewGroup,false);
-        RecipesViewHolder recipesViewHolder=new RecipesViewHolder(view);
-        return recipesViewHolder;
+        return new RecipesViewHolder(view);
 
     }
 
@@ -71,12 +70,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipesV
             recipeName.setText(recipes.get(position).getName());
             String imageUrl=recipes.get(position).getImage();
             if(imageUrl.isEmpty()){
-                Picasso.get().load(R.drawable.food_error).into(recipeImage);
+                Picasso.get().load(R.drawable.food_image).into(recipeImage);
             }else{
             Picasso.get()
                     .load(imageUrl)
-                    .error(R.drawable.food_error)
-                    .placeholder(R.drawable.food_error)
+                    .error(R.drawable.food_image)
+                    .placeholder(R.drawable.food_image)
                     .into(recipeImage);
         }
         }

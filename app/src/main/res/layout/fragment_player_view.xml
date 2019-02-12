@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/player_relative_layout"
+    >
+    <ImageView android:id="@+id/player_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/default_recipe_image"
+        android:visibility="gone"
+        />
+<com.google.android.exoplayer2.ui.PlayerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/player_view"
+
+   />
+
+</RelativeLayout>
